@@ -7,8 +7,7 @@ import HomePage from "./Components/Routing/HomePage";
 import CustomerPage from "./Components/Routing/CustomerPage";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Calories from "./Components/Calories";
-
-
+import TablePage from "./Components/Routing/TablePage";
 
 function App() {
 
@@ -16,7 +15,8 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <h1 className="title name">Names List</h1>
+          <HomePage/>
+          <Link to ='/homepage'><h1 className="title name">Names List</h1></Link>
           {/* <Input placeholder="name" name="rammaya"></Input>
         <br/>
         <NameTag firstname ="peter" lastname ="peterson"></NameTag>
@@ -34,6 +34,9 @@ function App() {
         <Switch>
           {/* <Route exact path='/' component={AboutPage} /> */}
           <Route path="/home" component={AboutPage} />
+          <Route exact path="/homepage" component={HomePage} />
+          <Route exact path="/tablepage" component={TablePage} />
+
           <Route path="/customerpage" component={CustomerPage} />
         </Switch>
       </div>

@@ -22,9 +22,12 @@ export default function Calories() {
         const filteredList = list.filter((item)=>item.calorie<=50)
         setList(filteredList)
     }
-    const defaultList =(e)=>{
-        const filteredList = initList.filter((item)=>item)
-
+    const defaultList =(e)=>{      
+        setList(initList)
+    }
+    const removeItem =(e)=>{  
+        console.dir(e.target.name);
+        const filteredList = list.filter((item)=>e.target.name!==item.name)
         setList(filteredList)
     }
 
@@ -33,7 +36,7 @@ export default function Calories() {
             <h2>Grocery list </h2>
            {
                list.map((v,i)=>{
-                   return(<CalorieCard key ={`${i}${v.name}${v.calorie}`} item ={v} ></CalorieCard>)
+                   return(<CalorieCard key ={`${i}${v.name}${v.calorie}`} item ={v} onClick ={removeItem} ></CalorieCard>)
                })
            }
            <button onClick ={removeUnhealthy}>RemoveUnhealthy</button>
