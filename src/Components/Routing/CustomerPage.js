@@ -1,16 +1,14 @@
 import React from 'react'
-import { useHistory } from "react-router-dom";
-
+// import { useHistory } from "react-router-dom";
+import Form from '../Form'
 
 
 function CustomerPage() {
-    const history = useHistory();
-    const CuustomerPage = () => {
-      history.push("/customerpage");
-    };
+    // const history = useHistory();
+
     return (
         <div>
-           <button onClick ={CuustomerPage}> SaiRam Mekala</button>
+           <Form />
         </div>
     )
 }

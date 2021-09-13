@@ -8,6 +8,7 @@ import CustomerPage from "./Components/Routing/CustomerPage";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Calories from "./Components/Calories";
 import TablePage from "./Components/Routing/TablePage";
+import ClockHook from "./Components/ClockHook";
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
           <Route exact path="/tablepage" component={TablePage} />
 
           <Route path="/customerpage" component={CustomerPage} />
+          <Route path="/todatepage" component={ClockHook} />
         </Switch>
       </div>
     </Router>

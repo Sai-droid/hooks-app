@@ -7,7 +7,8 @@ import HomeTwoToneIcon from '@material-ui/icons/HomeTwoTone';
 import CloudTwoToneIcon from '@material-ui/icons/CloudTwoTone';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom"
-
+import Form from '../Form'
+import CustomerPage from './CustomerPage';
 
 export default function HomePage() {
     const history = useHistory()
@@ -21,8 +22,11 @@ export default function HomePage() {
     setAnchorEl(null);
   };
 
-  const taablepage = () => {
-    history.push("/tablepage");
+  const toFormPage = () => {
+    history.push("/toformpage");
+  };
+  const todatePage = () => {
+    history.push("/todatepage");
   };
 
   return (
@@ -39,10 +43,10 @@ export default function HomePage() {
       >
          
         <MenuItem onClick={handleClose}> <HomeTwoToneIcon/>About</MenuItem>
-        <MenuItem onClick={handleClose}><CloudTwoToneIcon />CustomerPage</MenuItem>
+        <MenuItem onClick={handleClose}   onMouseOver ={toFormPage} ><CloudTwoToneIcon />CustomerPage</MenuItem>
         <MenuItem onClick={handleClose}><LockIcon/>Logout</MenuItem>
-        <MenuItem   onClick={handleClose} onMouseOver ={taablepage}><LockIcon/>TablePage</MenuItem>
-
+        <MenuItem   onClick={handleClose} onMouseOver ={toFormPage}><LockIcon/>TablePage</MenuItem>
+        <MenuItem   onClick={handleClose}  onMouseOver={todatePage}><LockIcon/>Date</MenuItem>
       </Menu>
     </div>
   );

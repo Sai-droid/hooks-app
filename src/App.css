@@ -52,3 +52,12 @@
   border-color:yellow;
   border-style:dotted
 }
+
+
+.form-field{
+  display:flex;
+  flex-direction:row;
+  margin-bottom:5px;
+  justify-content:space-between;
+  width:300px
+}
