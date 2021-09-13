@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Calories from "./Components/Calories";
 import TablePage from "./Components/Routing/TablePage";
 import ClockHook from "./Components/ClockHook";
+import FetchData from "./Components/FetchData";
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
           <HomePage />
           <Calories />
           <CustomerPage onClick={CustomerPage} />
+          <FetchData />
          
         </header>
         <Switch>
