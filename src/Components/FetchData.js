@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react'
+import axios from 'axios';
 import '../App.css'
 
 
@@ -13,13 +14,16 @@ function FetchData() {
  
 const  getProfile = async () =>{
  
-    const response = await fetch('https://api.github.com/users/sai-droid')
-    const json = await response.json();
+    const response = await axios.get('https://api.github.com/users/sai-droid')
+    const data = await response.data
 
     setProfile({
-        followers:json.followers,
-        publicRepos:json.public_repos
+        followers:data.followers,
+        publicRepos:data.public_repos
     })
+
+
+    
 
 }
 
